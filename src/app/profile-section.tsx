@@ -1,12 +1,5 @@
 import profile from "@/assets/profile.png";
-import {
-  Twitter,
-  Youtube,
-  Linkedin,
-  Instagram,
-  MapPin,
-  DollarSign,
-} from "lucide-react";
+import { Twitter, Youtube, Linkedin, Instagram, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function ProfileSection() {
@@ -28,9 +21,6 @@ export default function ProfileSection() {
       <div className="flex items-center gap-2 text-gray-600 mt-2">
         <MapPin size={18} />
         <span>India</span>
-        <span className="mx-2">•</span>
-        <DollarSign size={18} />
-        <span>$114.3k/month</span>
       </div>
 
       <p className="text-gray-700  mt-4 text-center lg:text-left text-sm">

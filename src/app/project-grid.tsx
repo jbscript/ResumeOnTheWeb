@@ -364,7 +364,7 @@ export function ProjectCard({
       {/* Project Details Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-7xl p-4 overflow-hidden">
-          <div className="max-h-[85vh] overflow-y-auto">
+          <div className="max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               {/* Header with Icon and Title */}
               <DialogHeader>
