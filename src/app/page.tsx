@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import profile from "@/assets/profile.png";
 import { useState } from "react";
 
-export default function PersonalShowcase() {
+export default function App() {
   const [activeTab, setActiveTab] = useState("all");
 
   return (
@@ -121,32 +121,6 @@ export default function PersonalShowcase() {
                 </a>
               </div>
             </div>
-
-            {/* Stats Section */}
-            <div className="mt-8 grid gap-4">
-              <StatsCard
-                title="Monthly Visitors"
-                value="124,568"
-                change="+14.2%"
-                isPositive={true}
-              />
-              <StatsCard
-                title="Conversion Rate"
-                value="3.2%"
-                change="+0.8%"
-                isPositive={true}
-              />
-            </div>
-
-            {/* Testimonial */}
-            <div className="mt-6">
-              <TestimonialCard
-                quote="Marc's newsletter has been instrumental in helping me launch my first profitable side project!"
-                name="Sarah Johnson"
-                title="Indie Hacker"
-                avatarUrl="/placeholder.svg?height=40&width=40"
-              />
-            </div>
           </div>
 
           {/* Projects Grid */}
@@ -218,37 +192,6 @@ export default function PersonalShowcase() {
                   </span>
                 </div>
               </div>
-              <ProjectCard
-                id="1"
-                title="Project Title"
-                description="Project Description"
-                icon="/icon.svg"
-                iconBg="bg-primary"
-                tags={[
-                  { label: "Tag 1", color: "bg-blue-500" },
-                  { label: "Tag 2", color: "bg-green-500" },
-                  { label: "Tag 3", color: "bg-yellow-500" },
-                ]}
-                fullDescription="Full Project Description"
-                images={["/image1.jpg", "/image2.jpg", "/image3.jpg"]}
-                features={["Feature 1", "Feature 2", "Feature 3"]}
-                reviews={[
-                  {
-                    name: "John Doe",
-                    role: "Software Engineer",
-                    comment: "Great project!",
-                    rating: 5,
-                  },
-                  {
-                    name: "Jane Doe",
-                    role: "Product Manager",
-                    comment: "Awesome work!",
-                    rating: 4,
-                  },
-                ]}
-                link="https://example.com"
-                ctaText="Visit Website"
-              />
 
               {/* Project Card: 50 Hacks */}
               <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all duration-300 hover:translate-y-[-2px] border border-transparent hover:border-green-200">
@@ -576,182 +519,6 @@ export default function PersonalShowcase() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Newsletter Popup */}
-      <NewsletterPopup />
-    </div>
-  );
-}
-
-import { X } from "lucide-react";
-
-export function NewsletterPopup() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
-      // Here you would typically send the email to your backend
-      setTimeout(() => {
-        setIsOpen(false);
-        setIsSubmitted(false);
-        setEmail("");
-      }, 3000);
-    }
-  };
-
-  if (!isOpen) {
-    return (
-      <Button
-        className="fixed bottom-6 right-6 bg-amber-500 hover:bg-amber-600 text-white rounded-full shadow-lg"
-        onClick={() => setIsOpen(true)}
-      >
-        Subscribe to Newsletter
-      </Button>
-    );
-  }
-
-  return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6 relative">
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
-        >
-          <X size={20} />
-        </button>
-
-        {isSubmitted ? (
-          <div className="text-center py-8">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-green-500 text-2xl">✓</span>
-            </div>
-            <h3 className="text-xl font-bold mb-2">Thanks for subscribing!</h3>
-            <p className="text-gray-600">
-              You'll receive your first email shortly.
-            </p>
-          </div>
-        ) : (
-          <>
-            <h3 className="text-xl font-bold mb-2">
-              Join 32,851 entrepreneurs
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Get weekly insights on finding startup ideas, launching fast, and
-              getting profitable.
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <Input
-                type="email"
-                placeholder="Your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full"
-              />
-              <Button
-                type="submit"
-                className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white"
-              >
-                Subscribe Now
-              </Button>
-            </form>
-
-            <p className="text-xs text-gray-500 mt-4 text-center">
-              No spam, ever. Unsubscribe anytime.
-            </p>
-          </>
-        )}
-      </div>
-    </div>
-  );
-}
-
-import { ArrowUpRight } from "lucide-react";
-import { ProjectCard } from "./project-card";
-
-interface StatsCardProps {
-  title: string;
-  value: string;
-  change: string;
-  isPositive?: boolean;
-}
-
-export function StatsCard({
-  title,
-  value,
-  change,
-  isPositive = true,
-}: StatsCardProps) {
-  return (
-    <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all duration-300 border border-transparent hover:border-gray-200">
-      <div className="flex justify-between items-start">
-        <div>
-          <p className="text-sm font-medium text-gray-500">{title}</p>
-          <h3 className="text-2xl font-bold mt-1">{value}</h3>
-        </div>
-        <div
-          className={`flex items-center ${
-            isPositive ? "text-green-500" : "text-red-500"
-          } text-sm font-medium`}
-        >
-          <span>{change}</span>
-          <ArrowUpRight
-            size={16}
-            className={`ml-1 ${!isPositive && "rotate-90"}`}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-interface TestimonialCardProps {
-  quote: string;
-  name: string;
-  title: string;
-  avatarUrl: string;
-}
-
-export function TestimonialCard({
-  quote,
-  name,
-  title,
-  avatarUrl,
-}: TestimonialCardProps) {
-  return (
-    <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all duration-300 border border-transparent hover:border-gray-200">
-      <div className="flex flex-col h-full">
-        <div className="mb-4">
-          <div className="flex gap-1">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span key={star} className="text-amber-400">
-                ★
-              </span>
-            ))}
-          </div>
-        </div>
-        <p className="text-gray-600 flex-grow">{quote}</p>
-        <div className="flex items-center mt-4 pt-4 border-t border-gray-100">
-          <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
-            <img
-              src={avatarUrl || "/placeholder.svg"}
-              alt={name}
-              width={40}
-              height={40}
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <h4 className="font-medium text-gray-900">{name}</h4>
-            <p className="text-sm text-gray-500">{title}</p>
           </div>
         </div>
       </div>
