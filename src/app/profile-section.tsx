@@ -33,11 +33,19 @@ export default function ProfileSection() {
         <span>$114.3k/month</span>
       </div>
 
-      <p className="text-gray-700 italic mt-4 text-center lg:text-left text-sm">
-        I was fired everywhere so I hired myself.
+      <p className="text-gray-700  mt-4 text-center lg:text-left text-sm">
+        🚀 Full-Stack Developer | Innovator | Founder
       </p>
 
-      <div className="flex justify-center gap-4">
+      <p className="text-muted-foreground font-light mt-4 text-center lg:text-left text-sm">
+        I’m a passionate full-stack developer with 4.5 years of experience
+        building innovative products. From automation tools to gamified apps, I
+        love creating solutions that enhance productivity, decision-making, and
+        self-improvement. Whether it's building Chrome extensions, SaaS
+        platforms, or AI-driven tools, I focus on delivering value through
+        technology.
+      </p>
+      <div className="flex justify-center gap-4 mt-4">
         <Button variant="ghost" size="icon" className="rounded-full">
           <Twitter className="h-5 w-5 text-[#1DA1F2]" />
         </Button>
