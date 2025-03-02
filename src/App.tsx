@@ -4,8 +4,8 @@ import Home from "./inspired";
 function App() {
   return (
     <>
-      <HackerMode />
       <Home />
+      <HackerMode />
     </>
   );
 }

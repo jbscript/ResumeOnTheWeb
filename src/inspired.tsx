@@ -101,7 +101,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            I'm <span className="font-medium">Alex Morgan</span>, a designer,
+            I'm <span className="font-medium">Jabir</span>, a designer,
             developer, and digital creator.
           </motion.h1>
 
@@ -111,11 +111,9 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            As a creative technologist, I've built and shipped{" "}
-            <span className="text-white font-medium">15+ products</span> (with
-            over 200K users), been featured on{" "}
-            <span className="text-white font-medium">Product Hunt</span>{" "}
-            multiple times, and contributed to open source projects{" "}
+            As a full-stack developer and automation enthusiast, I’ve built
+            AI-driven products, crafted innovative web solutions, and developed
+            advanced Chrome extensions
             <span className="text-yellow-400">✌️</span>
           </motion.p>
 
