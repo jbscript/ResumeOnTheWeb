@@ -565,11 +565,20 @@ export function ProjectCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden rounded-xl mb-4 aspect-[4/3]">
-        <img
+      <div className="relative overflow-hidden rounded-xl mb-4">
+        {/* <img
           src={imageUrl || "/placeholder.svg"}
           alt={title}
           fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        /> */}
+
+        <video
+          src="https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

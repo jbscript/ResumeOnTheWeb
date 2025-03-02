@@ -1,11 +1,11 @@
-import HackerMode from "./hacker-mode";
 import Home from "./inspired";
+import PersonalShowcase from "./marc";
 
 function App() {
   return (
     <>
-      <Home />
-      <HackerMode />
+      <PersonalShowcase />
+      {/* <HackerMode /> */}
     </>
   );
 }
