@@ -2,246 +2,150 @@ import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 const projectsSample = [
   {
-    id: "insighto",
-    title: "Insighto",
-    description: "Build features users (really) want",
+    id: "saaswizard",
+    title: "SaaSWizard",
+    description: "Streamline your SaaS subscriptions",
     icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=28&width=28",
-    iconBg: "bg-blue-100",
+    iconBg: "bg-indigo-100",
     tags: [
-      { label: "Product", color: "bg-blue-100 text-blue-800" },
       { label: "SaaS", color: "bg-indigo-100 text-indigo-800" },
-      { label: "Analytics", color: "bg-cyan-100 text-cyan-800" },
+      { label: "Management", color: "bg-gray-100 text-gray-800" },
     ],
     fullDescription:
-      "Insighto helps product teams understand what features their users actually want, not just what they say they want. Using behavioral analytics and feedback collection, Insighto provides actionable insights for product development.\n\nBuilt with a focus on ease of use and integration, Insighto connects with your existing tools and provides a unified dashboard for all user feedback and behavior data.",
+      "SaaSWizard is a cloud-based platform that centralizes the management of all your SaaS subscriptions. Track usage, optimize costs, and gain insights to maximize efficiency. With seamless integrations and real-time analytics, SaaSWizard ensures you're getting the best value from your software investments.",
     images: [
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
     ],
     features: [
-      "Real-time user behavior tracking with heatmaps and session recordings",
-      "Automated feedback collection through targeted surveys and feedback widgets",
-      "AI-powered analysis to identify patterns and prioritize feature requests",
-      "Integration with popular product management tools like Jira, Trello, and Asana",
-      "Custom reporting and dashboards for stakeholder presentations",
+      "Centralized dashboard for all subscriptions",
+      "Real-time usage analytics",
+      "Automated cost optimization recommendations",
+      "Seamless integration with popular SaaS platforms",
+      "Custom alerts for upcoming renewals",
     ],
     reviews: [
       {
-        name: "Sarah Johnson",
-        role: "Product Manager at TechCorp",
+        name: "Jordan Miles",
+        role: "Product Manager at TechSolutions",
         comment:
-          "Insighto has completely transformed how we prioritize our roadmap. We're now building features our users actually use!",
+          "SaaSWizard has simplified our subscription management, saving us both time and money!",
         rating: 5,
       },
-      {
-        name: "Michael Chen",
-        role: "CTO at StartupX",
-        comment:
-          "The integration with our existing tools was seamless, and the insights we've gained have been invaluable.",
-        rating: 4,
-      },
     ],
-    link: "https://example.com/insighto",
-    ctaText: "Try Free Demo",
+    link: "https://example.com/saaswizard",
+    ctaText: "Start Free Trial",
   },
   {
-    id: "50hacks",
-    title: "50 Hacks",
-    description: "The top 50 productivity tips chosen by the internet",
+    id: "tabgenie",
+    title: "Tab Genie",
+    description: "Organize your browser tabs effortlessly",
     icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=28&width=28",
-    iconBg: "bg-emerald-100",
+    iconBg: "bg-yellow-100",
     tags: [
-      { label: "Content", color: "bg-green-100 text-green-800" },
-      { label: "Productivity", color: "bg-teal-100 text-teal-800" },
+      { label: "Chrome Extension", color: "bg-yellow-100 text-yellow-800" },
+      { label: "Productivity", color: "bg-blue-100 text-blue-800" },
     ],
     fullDescription:
-      "A curated collection of the 50 most effective productivity hacks from across the internet. Each hack is explained with practical examples and implementation guides to help you boost your productivity immediately.\n\nThe collection is regularly updated based on user feedback and new research in productivity science.",
+      "Tab Genie is a Chrome extension designed to declutter your browser. Automatically group, manage, and save your open tabs, allowing you to focus on what matters most. Enjoy a streamlined browsing experience and boost your productivity effortlessly.",
     images: [
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
     ],
     features: [
-      "50 actionable productivity techniques with step-by-step implementation guides",
-      "Categorized by effort level and impact for easy filtering",
-      "Downloadable templates and resources for each hack",
-      "Community section where users share their results and adaptations",
-      "Monthly updates with new techniques based on user voting",
+      "Auto-group and manage tabs",
+      "Session saving and restoration",
+      "Customizable tab grouping rules",
+      "Minimalist design for distraction-free browsing",
+      "Quick access toolbar for favorite sites",
     ],
     reviews: [
       {
-        name: "Alex Rivera",
-        role: "Freelance Designer",
+        name: "Jamie Collins",
+        role: "UX Designer",
         comment:
-          "I've tried dozens of productivity systems, but 50 Hacks actually gave me practical techniques I could implement immediately.",
+          "Tab Genie has transformed my browsing experience by keeping my tabs organized and clutter-free.",
         rating: 5,
       },
     ],
-    link: "https://example.com/50hacks",
-    ctaText: "Get Access",
+    link: "https://example.com/tabgenie",
+    ctaText: "Add to Chrome",
   },
   {
-    id: "herofit",
-    title: "Hero Fit",
-    description: "Gamify your fitness, grow a workout avatar",
+    id: "autoagent",
+    title: "AutoAgent AI",
+    description: "Your autonomous AI assistant",
     icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=28&width=28",
-    iconBg: "bg-purple-100",
+    iconBg: "bg-red-100",
     tags: [
-      { label: "Fitness", color: "bg-purple-100 text-purple-800" },
-      { label: "App", color: "bg-pink-100 text-pink-800" },
-      { label: "Gamification", color: "bg-violet-100 text-violet-800" },
+      { label: "AI", color: "bg-red-100 text-red-800" },
+      { label: "Agentic", color: "bg-pink-100 text-pink-800" },
     ],
     fullDescription:
-      "Hero Fit turns your fitness journey into a game. As you complete workouts, your digital avatar grows stronger and unlocks new abilities. Connect with friends, join challenges, and make fitness fun again.\n\nThe app uses gamification principles to keep you motivated and consistent with your fitness routine.",
+      "AutoAgent AI leverages cutting-edge autonomous algorithms to handle routine tasks on your behalf. From scheduling meetings to data analysis, this agentic AI learns from your interactions, streamlining your workflow with minimal input.",
     images: [
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
     ],
     features: [
-      "Personalized avatar that evolves as you complete workouts",
-      "RPG-style progression system with levels, skills, and achievements",
-      "Social challenges and competitions with friends",
-      "Integration with fitness trackers and smartwatches",
-      "Customizable workout plans based on your goals and preferences",
+      "Autonomous task management",
+      "Intelligent scheduling and reminders",
+      "Adaptive learning from user behavior",
+      "Integration with calendar and email apps",
+      "Real-time performance insights",
     ],
     reviews: [
       {
-        name: "Jessica Kim",
-        role: "Fitness Enthusiast",
+        name: "Riley Adams",
+        role: "Operations Manager",
         comment:
-          "Hero Fit made me excited about working out again! Seeing my avatar get stronger keeps me motivated.",
+          "AutoAgent AI has significantly reduced my daily workload by automating repetitive tasks.",
         rating: 5,
       },
+    ],
+    link: "https://example.com/autoagent",
+    ctaText: "Meet Your Agent",
+  },
+  {
+    id: "travelmate",
+    title: "Travel Mate",
+    description: "Plan and share your travel adventures",
+    icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=28&width=28",
+    iconBg: "bg-teal-100",
+    tags: [
+      { label: "React Native", color: "bg-teal-100 text-teal-800" },
+      { label: "Travel", color: "bg-blue-100 text-blue-800" },
+    ],
+    fullDescription:
+      "Travel Mate is a React Native mobile app that makes travel planning a breeze. Create itineraries, discover local attractions, and share your adventures with a vibrant community of travelers. Enjoy offline access and seamless synchronization across devices.",
+    images: [
+      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
+      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
+      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
+    ],
+    features: [
+      "Itinerary creation and management",
+      "Offline access to travel guides",
+      "Community sharing and reviews",
+      "Real-time synchronization across devices",
+      "Integrated maps and local recommendations",
+    ],
+    reviews: [
       {
-        name: "David Thompson",
-        role: "Gym Owner",
+        name: "Taylor Reed",
+        role: "Travel Blogger",
         comment:
-          "We've implemented Hero Fit in our gym and seen a 30% increase in member retention. The gamification really works!",
-        rating: 4,
+          "Travel Mate is my go-to app for planning trips. The offline mode is a lifesaver when traveling abroad!",
+        rating: 5,
       },
     ],
-    link: "https://example.com/herofit",
+    link: "https://example.com/travelmate",
     ctaText: "Download App",
   },
-  {
-    id: "fakeituntilyoumakeit",
-    title: "Fake It Till You Make It",
-    description: "Prank your entrepreneur friends!",
-    icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=28&width=28",
-    iconBg: "bg-amber-100",
-    tags: [
-      { label: "Fun", color: "bg-amber-100 text-amber-800" },
-      { label: "Tool", color: "bg-orange-100 text-orange-800" },
-    ],
-    fullDescription:
-      "A fun tool to generate fake startup success stories, complete with made-up metrics, funding rounds, and testimonials. Perfect for pranking your entrepreneur friends or adding some humor to your next startup meetup.",
-    images: [
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
-    ],
-    features: [
-      "Generate realistic-looking startup success metrics and growth charts",
-      "Create fake funding announcements from top VCs",
-      "Produce AI-generated testimonials and case studies",
-      "Design mockup screenshots of non-existent products",
-      "Share directly to social media with one click",
-    ],
-    reviews: [
-      {
-        name: "Ryan Garcia",
-        role: "Startup Founder",
-        comment:
-          "Used this at our last founder meetup and had everyone in stitches. The metrics look so real!",
-        rating: 5,
-      },
-    ],
-    link: "https://example.com/fakeituntilyoumakeit",
-    ctaText: "Start Pranking",
-  },
-  {
-    id: "visualizehabit",
-    title: "Visualize Habit",
-    description: "Discover how tiny habits compound over years",
-    icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=28&width=28",
-    iconBg: "bg-blue-100",
-    tags: [
-      { label: "Productivity", color: "bg-teal-100 text-teal-800" },
-      { label: "Tool", color: "bg-orange-100 text-orange-800" },
-      { label: "Self-Improvement", color: "bg-blue-100 text-blue-800" },
-    ],
-    fullDescription:
-      "Visualize Habit helps you understand the power of small daily habits through interactive visualizations. See how tiny 1% improvements compound over time and create significant life changes.",
-    images: [
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
-    ],
-    features: [
-      "Interactive calculators to visualize the compound effect of daily habits",
-      "Habit tracking with visual progress indicators",
-      "Customizable goals and milestones",
-      "Data-driven insights about your consistency and progress",
-      "Reminder system with smart notifications based on your behavior patterns",
-    ],
-    reviews: [
-      {
-        name: "Emma Wilson",
-        role: "Life Coach",
-        comment:
-          "I recommend Visualize Habit to all my clients. The visual representation of compound growth is incredibly motivating.",
-        rating: 5,
-      },
-      {
-        name: "Thomas Lee",
-        role: "Software Engineer",
-        comment:
-          "As someone who loves data, I appreciate how this tool quantifies the impact of my daily habits.",
-        rating: 4,
-      },
-    ],
-    link: "https://example.com/visualizehabit",
-    ctaText: "Visualize Your Habits",
-  },
-  {
-    id: "decisiongame",
-    title: "Decision Game",
-    description: "A fun game to stop overthinking. Save Kitty!",
-    icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=28&width=28",
-    iconBg: "bg-rose-100",
-    tags: [
-      { label: "Game", color: "bg-rose-100 text-rose-800" },
-      { label: "Mental Health", color: "bg-pink-100 text-pink-800" },
-    ],
-    fullDescription:
-      "Decision Game is a fun, interactive game designed to help you overcome decision paralysis and overthinking. Help save Kitty by making quick decisions under time pressure, and learn to trust your instincts in the process.",
-    images: [
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
-    ],
-    features: [
-      "Fun, engaging gameplay that secretly trains your decision-making skills",
-      "Progressive difficulty levels that adapt to your decision-making speed",
-      "Mindfulness techniques integrated into gameplay",
-      "Performance analytics to track your improvement over time",
-      "Daily challenges to keep you engaged and improving",
-    ],
-    reviews: [
-      {
-        name: "Olivia Martinez",
-        role: "Chronic Overthinker",
-        comment:
-          "I didn't realize I was improving my decision-making until I noticed changes in my real life. Plus, the game is adorable!",
-        rating: 5,
-      },
-    ],
-    link: "https://example.com/decisiongame",
-    ctaText: "Play Now",
-  },
 ];
+
 export default function ProjectGrid({ title = "My Projects" }) {
   const [activeTab, setActiveTab] = useState("all");
 
