@@ -7,6 +7,7 @@ import {
   MapPin,
   DollarSign,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ProfileSection() {
   return (
@@ -49,100 +50,6 @@ export default function ProfileSection() {
         <Button variant="ghost" size="icon" className="rounded-full">
           <Instagram className="h-5 w-5 text-[#E4405F]" />
         </Button>
-      </div>
-      <div className="bg-white rounded-xl border border-gray-200 p-4">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Experience</h3>
-        <UserTimeline />
-      </div>
-    </div>
-  );
-}
-
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-
-interface TimelineEntryProps {
-  id: string;
-  title: string;
-  company: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-  icon: string;
-  // location?: string
-  // achievements?: string[]
-  // skills?: string[]
-  // iconBg?: string
-  // link?: string
-  // images?: string[]
-}
-
-const timelineEntries = [
-  {
-    id: "qabox",
-    title: "Founder & CEO",
-    company: "Qabox",
-    startDate: "2023",
-    endDate: "Present",
-    description:
-      "Founded Qabox, secured $2.5M funding, grew to 50+ enterprise customers.",
-    icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=40&width=40",
-  },
-  {
-    id: "techcorp",
-    title: "Senior Product Manager",
-    company: "TechCorp",
-    startDate: "2020",
-    endDate: "2022",
-    description:
-      "Led flagship analytics platform, increased user engagement by 45%.",
-    icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=40&width=40",
-  },
-  {
-    id: "innovatestart",
-    title: "Product Designer",
-    company: "InnovateStart",
-    startDate: "2018",
-    endDate: "2020",
-    description:
-      "Redesigned core learning platform, 28% increase in student engagement.",
-    icon: "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=40&width=40",
-  },
-];
-
-function UserTimeline() {
-  return (
-    <div className="space-y-4">
-      {timelineEntries.map((entry) => (
-        <TimelineEntry key={entry.id} entry={entry} />
-      ))}
-    </div>
-  );
-}
-
-function TimelineEntry({ entry }: { entry: TimelineEntryProps }) {
-  const { title, company, startDate, endDate, description, icon } = entry;
-
-  return (
-    <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
-      <div className="flex-shrink-0">
-        <img
-          src={icon || "/placeholder.svg"}
-          alt={company}
-          width={40}
-          height={40}
-          className="rounded-full"
-        />
-      </div>
-      <div className="flex-grow min-w-0">
-        <h4 className="text-sm font-semibold text-gray-900">{title}</h4>
-        <p className="text-xs text-gray-600">{company}</p>
-        <div className="flex items-center gap-2 mt-1">
-          <Badge variant="secondary" className="text-xs font-normal">
-            {startDate} - {endDate}
-          </Badge>
-        </div>
-        <p className="text-sm text-gray-700 mt-2 line-clamp-2">{description}</p>
       </div>
     </div>
   );
