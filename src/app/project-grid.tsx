@@ -19,7 +19,6 @@ const projectsSample = [
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
       "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
-      "https://kzmjezh8rzxirxgehgem.lite.vusercontent.net/placeholder.svg?height=400&width=600",
     ],
     features: [
       "Real-time user behavior tracking with heatmaps and session recordings",
