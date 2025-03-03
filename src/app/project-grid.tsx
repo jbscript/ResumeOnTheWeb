@@ -146,31 +146,10 @@ const projectsSample = [
   },
 ];
 
-export default function ProjectGrid({ title = "My Projects" }) {
-  const [activeTab, setActiveTab] = useState("all");
-
+export default function ProjectGrid() {
   return (
     <>
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
-        <div className="flex items-center gap-2">
-          {["all", "active", "acquired"].map((tab) => (
-            <Button
-              key={tab}
-              variant={activeTab === tab ? "default" : "outline"}
-              className={`text-sm ${
-                activeTab === tab
-                  ? "bg-gradient-to-r from-pink-500 to-orange-500 text-white"
-                  : "bg-white"
-              }`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </Button>
-          ))}
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="p-6 max-lg:space-y-4 lg:grid lg:grid-cols-2 lg:gap-8 lg:p-16">
         {projectsSample.map((project) => (
           <ProjectCard key={project.id} {...project} />
         ))}
@@ -236,27 +215,22 @@ export function ProjectCard({
   return (
     <>
       <div
-        className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all duration-300
+        className="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition-all duration-300
           hover:translate-y-[-2px] border border-transparent hover:border-blue-200"
         onClick={() => setIsOpen(true)}
       >
-        <div className="flex items-start justify-between">
+        <div>
           <div className="flex items-center gap-3">
-            <div
-              className={`bg-gradient-to-br ${iconBg}  p-3 rounded-lg text-white`}
-            >
-              <span role="img" className="text-xl">
-                🦸
-              </span>
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg">{title}</h3>
-              <p className="text-gray-600 mt-2">{description}</p>
-            </div>
+            <span role="img" className="text-xl">
+              🦸
+            </span>
+
+            <h3 className="font-semibold text-lg">{title}</h3>
           </div>
+          <p className="text-gray-600 mt-1 text-sm">{description}</p>
         </div>
 
-        <div className="flex items-center gap-2 mt-4">
+        <div className="flex items-center gap-2 mt-2">
           {tags.map((tag, index) => (
             <span
               key={index}

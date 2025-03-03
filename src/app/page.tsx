@@ -4,20 +4,17 @@ import ProjectGrid from "./project-grid";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-pink-50">
-      <div className="container mx-auto px-4 py-12 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-7">
-          {/* Profile Section */}
-          <div className="lg:col-span-3 space-y-6">
-            <ProfileSection />
-          </div>
+    <main className="min-h-screen bg-[#e6e6e6]">
+      <div className="noscrollbar mx-auto flex min-h-screen max-w-[1800px] flex-col max-lg:pb-16 lg:h-screen lg:flex-row lg:overflow-y-auto">
+        <section className="noscrollbar shrink-0 space-y-4 p-6 lg:sticky lg:top-0 lg:h-screen lg:w-[350px] lg:space-y-8 lg:overflow-y-auto lg:p-16 lg:pr-0 lg:pb-24 xl:w-[500px] xl:pr-16">
+          <ProfileSection />
+        </section>
 
-          {/* Projects Grid */}
-          <div className="lg:col-span-9">
-            <ProjectGrid title="Projects" />
-          </div>
-        </div>
+        <section className="w-full max-w-[1100px] lg:h-full">
+          <div className="divider my-0 px-6 lg:hidden" />
+          <ProjectGrid />
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

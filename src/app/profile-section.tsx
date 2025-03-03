@@ -23,11 +23,19 @@ export default function ProfileSection() {
         <span>India</span>
       </div>
 
-      <p className="text-gray-700  mt-4 text-center lg:text-left text-sm">
+      <p
+        className="text-gray-700  mt-4 text-center lg:text-left text-sm
+      leading-relaxed lg:text-lg
+font-semibold      "
+      >
         🚀 Full-Stack Developer | Innovator | Founder
       </p>
 
-      <p className="text-muted-foreground font-light mt-4 text-center lg:text-left text-sm">
+      <p
+        className="text-muted-foreground font-light mt-4 text-center lg:text-left text-sm
+      leading-relaxed lg:text-lg
+      "
+      >
         I’m a passionate full-stack developer with 4.5 years of experience
         building innovative products. From automation tools to gamified apps, I
         love creating solutions that enhance productivity, decision-making, and
