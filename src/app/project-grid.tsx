@@ -170,7 +170,6 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export interface ProjectCardProps {
-  id: string;
   title: string;
   description: string;
   icon: string;
@@ -193,7 +192,6 @@ export interface ProjectCardProps {
 }
 
 export function ProjectCard({
-  id,
   title,
   description,
   icon,
@@ -339,7 +337,6 @@ export function ProjectCard({
             <img
               src={images[currentImageIndex] || "/placeholder.svg"}
               alt={`${title} screenshot full view`}
-              fill
               className="object-contain"
             />
           </div>
