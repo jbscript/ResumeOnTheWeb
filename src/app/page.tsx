@@ -1,4 +1,5 @@
 import ProfileSection from "./profile-section";
+
 import ProjectGrid from "./project-grid";
 
 export default function App() {

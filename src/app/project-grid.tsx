@@ -249,10 +249,13 @@ export function ProjectCard({
                 🦸
               </span>
             </div>
-            <h3 className="font-semibold text-lg">{title}</h3>
+            <div>
+              <h3 className="font-semibold text-lg">{title}</h3>
+              <p className="text-gray-600 mt-2">{description}</p>
+            </div>
           </div>
         </div>
-        <p className="text-gray-600 mt-2">{description}</p>
+
         <div className="flex items-center gap-2 mt-4">
           {tags.map((tag, index) => (
             <span
